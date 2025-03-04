@@ -151,7 +151,7 @@ async function getFileContents(
   }
 
   const data = GitLabContentSchema.parse(await response.json());
-  
+
   if (!Array.isArray(data) && data.content) {
     data.content = Buffer.from(data.content, 'base64').toString('utf8');
   }
